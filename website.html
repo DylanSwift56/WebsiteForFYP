@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Webpage with JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Interactive Webpage with JavaScript</h1>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <label for="color">Favorite Color:</label>
+            <select id="color" name="color">
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="yellow">Yellow</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="subscribe" name="subscribe">
+            <label for="subscribe">Subscribe to newsletter</label>
+        </div>
+        <div class="form-group">
+            <label for="comments">Comments:</label>
+            <textarea id="comments" name="comments" placeholder="Write something..."></textarea>
+        </div>
+        <div class="form-group">
+            <button type="button" onclick="showMessage()">Submit</button>
+        </div>
+        <div id="message" class="hidden">
+            <h3>Form Submitted</h3>
+            <p>Name: <span id="displayName"></span></p>
+            <p>Favorite Color: <span id="displayColor"></span></p>
+            <p>Subscribed: <span id="displaySubscribe"></span></p>
+            <p>Comments: <span id="displayComments"></span></p>
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            var name = document.getElementById('name').value;
+            var color = document.getElementById('color').value;
+            var subscribe = document.getElementById('subscribe').checked ? 'Yes' : 'No';
+            var comments = document.getElementById('comments').value;
+
+            document.getElementById('displayName').textContent = name;
+            document.getElementById('displayColor').textContent = color;
+            document.getElementById('displaySubscribe').textContent = subscribe;
+            document.getElementById('displayComments').textContent = comments;
+
+            document.getElementById('message').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
