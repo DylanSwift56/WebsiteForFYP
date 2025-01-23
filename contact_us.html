@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Webpage</title>
+    <title>Contact Us</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -31,9 +31,6 @@
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .hidden {
-            display: none;
-        }
         button {
             background-color: #4CAF50;
             color: white;
@@ -53,18 +50,20 @@
         <a href="contact.html">Contact Us</a>
     </nav>
     <div class="container">
-        <h1>Interactive Webpage</h1>
-        <p>Welcome to the interactive webpage. Use the navigation links above to explore.</p>
-        <div>
-            <label for="inputField">Test Input:</label>
-            <input type="text" id="inputField" placeholder="Enter some text">
-            <button onclick="showAlert()">Test</button>
-        </div>
+        <h1>Contact Us</h1>
+        <form>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" placeholder="Enter your name"><br>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" placeholder="Enter your email"><br>
+            <label for="message">Message:</label>
+            <textarea id="message" placeholder="Enter your message"></textarea><br>
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
     </div>
     <script>
-        function showAlert() {
-            const input = document.getElementById('inputField').value;
-            alert('You entered: ' + input);
+        function submitForm() {
+            alert("Form submitted! Thank you for reaching out.");
         }
     </script>
 </body>
